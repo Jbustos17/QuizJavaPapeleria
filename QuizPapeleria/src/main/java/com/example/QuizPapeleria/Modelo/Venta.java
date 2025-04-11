@@ -15,12 +15,12 @@ public class Venta {
     private LocalDate fecha;
     private LocalTime hora;
 
-    @ManyToOne
-    @JoinColumn(name = "id_cliente")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "idCliente")
     private Cliente cliente;
 
-    @ManyToOne
-    @JoinColumn(name = "id_empleado")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "idEmpleado")
     private Empleado empleado;
 
     @OneToMany(mappedBy = "venta")
